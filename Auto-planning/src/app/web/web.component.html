@@ -1,0 +1,39 @@
+<h1 style="text-align: center; padding-top:50px;">Auto planning system overview</h1>
+<div class="row" style="padding-bottom: 40px;"> 
+    <div class="col-md-12" style="padding : 0px 55px;">
+        <div style="background-color:#FCEBD1; padding: 50px 55px;" >
+            <div [chart]="container" id="container"></div>
+        </div>
+    </div> 
+</div>
+
+<div class="row" style="background-color:#fff">
+    <div class="col-md-12">
+    <div class="card-deck" *ngFor="let obj of web_object" style="padding: 30px 55px;">
+        <div class="card scroll-block {{obj.classNameL}}">
+            <div class="card-horizontal">
+                <div class="img-square-wrapper">
+                    <img class="" src="{{obj.imgL}}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title"><a href="{{obj.linkL}}" style="color:#454545"><u>{{obj.titleL}}</u></a></h4>
+                    <p class="card-text">{{obj.contentL}} <a href="{{obj.linkL}}"> Go to web > </a></p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="card scroll-block {{obj.classNameR}}">
+            <div class="card-horizontal">
+                <div class="img-square-wrapper">
+                    <img class="" src="{{obj.imgR}}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title"><a href="{{obj.linkR}}" style="color:#454545"><u>{{obj.titleR}}</u></a></h4>
+                    <p class="card-text">{{obj.contentR}} <a href="{{obj.linkR}}"> Go to web > </a></p>
+                </div>
+            </div>     
+        </div>
+        </div>
+</div>
+
+</div>
