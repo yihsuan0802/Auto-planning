@@ -1,0 +1,15 @@
+/**
+ * @license
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/l-lin/angular-datatables/master/LICENSE
+ */
+/**
+ * @module
+ * @description
+ * Entry point from which you should import all public library APIs.
+ */
+export { DataTableDirective } from './src/angular-datatables.directive';
+export { DataTablesModule } from './src/angular-datatables.module';
+
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEBsaWNlbnNlXG4gKlxuICogVXNlIG9mIHRoaXMgc291cmNlIGNvZGUgaXMgZ292ZXJuZWQgYnkgYW4gTUlULXN0eWxlIGxpY2Vuc2UgdGhhdCBjYW4gYmVcbiAqIGZvdW5kIGluIHRoZSBMSUNFTlNFIGZpbGUgYXQgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2wtbGluL2FuZ3VsYXItZGF0YXRhYmxlcy9tYXN0ZXIvTElDRU5TRVxuICovXG4vKipcbiAqIEBtb2R1bGVcbiAqIEBkZXNjcmlwdGlvblxuICogRW50cnkgcG9pbnQgZnJvbSB3aGljaCB5b3Ugc2hvdWxkIGltcG9ydCBhbGwgcHVibGljIGxpYnJhcnkgQVBJcy5cbiAqL1xuZXhwb3J0IHsgRGF0YVRhYmxlRGlyZWN0aXZlIH0gZnJvbSAnLi9zcmMvYW5ndWxhci1kYXRhdGFibGVzLmRpcmVjdGl2ZSc7XG5leHBvcnQgeyBEYXRhVGFibGVzTW9kdWxlIH0gZnJvbSAnLi9zcmMvYW5ndWxhci1kYXRhdGFibGVzLm1vZHVsZSc7XG4iXX0=
