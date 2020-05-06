@@ -1,0 +1,152 @@
+<h1 style="text-align: center; padding-top:50px;">Development Schedule</h1>
+<div class="row" style="background-color:#F5F6F0">
+    <div class="col-md-12" style="padding: 10px 55px;">
+        <ejs-gantt 
+            id="GanttSample" 
+            [dataSource]="data" 
+            height="450px" 
+            width="100%" 
+            [taskFields]="taskfield">
+        </ejs-gantt>
+    </div>
+    <div class="col-md-12" style="padding: 25px 55px 60px 55px; width: 100%;">
+        <div class="row">
+            <div class="col-md-6">
+                <button type="button" class="btn btn-info" style="width: 100%" routerLink="/requirement">See all required forms</button>
+                <!-- <input type="button" style="width:66%; height:115px; background-image:url('./assets/image/Button_ViewRequirement.png');"> -->
+            </div>
+            <div class="col-md-6">
+                <button type="button" class="btn btn-info" style="width: 100%" (click)="openModal(template)">Send a reqired form</button>
+                <!-- <input type="button" style="width:65%; height:115px; background-image:url('./assets/image/Button_SendRequirement.png'); padding: 25px" (click)="openModal(template)">
+                <img src="./assets/image/Admin_Background.png"> -->
+            </div>
+        </div>
+    </div>
+
+    <ng-template #template>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Requirement Form</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label>FAB</label>
+                        <!-- <input [(ngModel)]="fab" name="fab" type="text" class="form-control" placeholder="Select the project or system name">     -->
+                        <select class="form-control" [(ngModel)]="facility" name="facility">
+                            <option *ngFor="let facility of facilityOption; let i = index" [value]="facility.Facility">
+                              {{facility.Facility}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Department</label>
+                        <!-- <input [(ngModel)]="department" name="department" type="text" class="form-control" placeholder="Select your dapartment">     -->
+                        <select class="form-control" [(ngModel)]="department" name="department">
+                            <option *ngFor="let department of departmentOption; let i = index" [value]="department.Department">
+                              {{department.Department}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>System/Project</label>
+                        <!-- <input [(ngModel)]="project" name="project" type="text" class="form-control" placeholder="Select the project or system name">     -->
+                        <select class="form-control" [(ngModel)]="project" name="project">
+                          <option *ngFor="let project of projectOption; let i = index" [value]="project.Project">
+                            {{project.Project}}
+                          </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Username</label>
+                        <input [(ngModel)]="user" name="user" type="text" class="form-control" placeholder="Please enter your username">    
+                    </div>
+                </div>
+                <!-- Title -->
+                <div class="form-group">
+                    <label>Title</label>
+                    <input [(ngModel)]="title" name="title" type="text" class="form-control" placeholder="Enter title">
+                </div>
+                <!-- Purpose -->
+                <div class="form-group">
+                  <label>Purpose</label>
+                  <input [(ngModel)]="purpose" name="purpose" type="text" class="form-control" placeholder="Enter purpose">
+                </div>
+                <!-- Requirement -->
+                <div class="form-group">
+                  <label>Requirement</label>
+                  <input [(ngModel)]="requirement" name="requirement" type="text" class="form-control" placeholder="Enter your requirement">
+                </div>
+                <!-- Justification -->
+                <div class="form-group">
+                    <label>Justification</label>
+                    <input [(ngModel)]="justification" name="justification" type="text" class="form-control" placeholder="Enter the justification">
+                  </div>
+                <!-- Value -->
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label><u>Value</u></label>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label>WAS-IS</label>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label>TO-BE</label>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label>Working Day</label>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input [(ngModel)]="workingDay_before" name="workingDay_before" type="text" class="form-control" placeholder="Before">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input [(ngModel)]="workingDay_after" name="workingDay_after" type="text" class="form-control" placeholder="After">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label>Frequency</label>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input [(ngModel)]="frequency_before" name="frequency_before" type="text" class="form-control" placeholder="Before">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input [(ngModel)]="frequency_after" name="frequency_after" type="text" class="form-control" placeholder="After">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label>Judge Method</label>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input [(ngModel)]="judgeMethod_before" name="judgeMethod_before" type="text" class="form-control" placeholder="Before">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input [(ngModel)]="judgeMethod_after" name="judgeMethod_after" type="text" class="form-control" placeholder="After">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label>Tracking Item</label>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input [(ngModel)]="trackingTime_before" name="trackingTime_before" type="text" class="form-control" placeholder="Before">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input [(ngModel)]="trackingTime_after" name="trackingTime_after" type="text" class="form-control" placeholder="After">
+                    </div>
+                </div>
+
+                <!-- UploadFile -->
+                <div class="form-group">
+                    <label>Detail</label>
+                    <textarea [(ngModel)]="detail" name="detail" class="form-control" rows="5" id="comment" placeholder="Enter more detail, like how do you want to display in each page, the priority od each function..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Example file input</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+                <!-- Submit -->
+                  <button type="submit" class="btn btn-primary" (click)="save()">Submit</button>
+            </form>
+              
+        </div>
+      </ng-template>
+<div>

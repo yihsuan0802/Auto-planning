@@ -1,0 +1,23 @@
+.news-background{
+    text-align: left;
+    height: 800px;
+    font-size: 20px;
+    background-color: #F5F6F1;
+    color: #041117;
+}
+.carousel-control-next-icon {
+    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e")
+}
+
+.padding {
+    padding: 150px 25px;
+}
+.section-block{
+    height: 500px;
+    width: 100%;
+    background-color: cadetblue;
+}
+
+.scroll-block {
+    scroll-margin: 100px;
+}

@@ -1,0 +1,133 @@
+<app-navbar></app-navbar>
+<div class="row">
+  <div class="col-md-12">
+    <img src="./assets/image/Admin_Background.png" style="width: 100%; height: 125px;">
+  </div>
+</div>
+
+<div class="row">
+  <div *ngIf="displayTable" class="col-md-12" style="padding: 50px;">
+    <table datatable [dtOptions]="dtOptions" class="row-border hover">
+      <thead>
+        <tr>
+          <td>Action</td>
+          <td>System/Project</td>
+          <td>Title</td>
+          <td>Purpose</td>
+          <td>Department</td>
+          <td>User</td>
+          <td>Update Time</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of rowdata">
+          <td><button type="button" class="btn btn-info" (click)="openModal(template, data)">Set</button></td>
+          <td>{{data.Project}}</td>
+          <td>{{data.Title}}</td>
+          <td>{{data.Purpose}}</td>
+          <td>{{data.Department}}</td>
+          <td>{{data.User}}</td>
+          <td>{{data.Update_Time}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <ng-template #template>
+    <div class="modal-header">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6">
+            <h4 class="modal-title pull-left">
+              <h1>{{title_name}}</h1>
+            </h4>
+          </div>
+          <div class="col-md-5">
+            <select class="form-control justify-content-end"
+              style="width: 50%; float: right; margin: 15px 0px 0px 0px;">
+              <option>Under Review</option>
+              <option>Approve</option>
+            </select>
+          </div>
+          <div class="col-md-1">
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="form">
+        <div class="form-group col-md-12" *ngFor="let ww of ww_set">
+          <div class="custom-control custom-checkbox" style="float: right;">
+            <input type="checkbox" class="custom-control-input" name="MileStone" [(ngModel)]="ww.MileStone">
+            <label class="custom-control-label">MileStone</label>
+          </div>
+          <label class="col-form-label">
+            <h5>Items</h5>
+          </label>
+          <input class="form-control" [(ngModel)]="ww.Items" value="{{ww.Items}}" name="Items" type="text"
+            placeholder="Item name">
+          <div class="form-row">
+            <div class="form-group col-md-12" style="margin: 25px 0px 0px 0px;">
+              <label class="col-form-label">
+                <h5>Working Day</h5>
+              </label>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="col-form-label">Request Confirm</label>
+              <input class="form-control" [(ngModel)]="ww.RequestConfirm" value="{{ww.RequestConfirm}}"
+                name="RequestConfirm" type="text" placeholder="Request confirm need day">
+            </div>
+            <div class="form-group col-md-3">
+              <label class="col-form-label">Develop</label>
+              <input class="form-control" [(ngModel)]="ww.Develop" value="{{ww.Develop}}" name="Develop" type="text"
+                placeholder="Develop need day">
+            </div>
+            <div class="form-group col-md-3">
+              <label class="col-form-label">UAT</label>
+              <input class="form-control" [(ngModel)]="ww.UAT" value="{{ww.UAT}}" name="UAT" type="text"
+                placeholder="UAT need day">
+            </div>
+            <div class="form-group col-md-3">
+              <label class="col-form-label">Start Date</label>
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="ww.StartDate" ngbDatepicker
+                  #d="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                    <svg class="bi bi-calendar" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M14 0H2a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"
+                        clip-rule="evenodd" />
+                      <path fill-rule="evenodd"
+                        d="M6.5 7a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm-9 3a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm-9 3a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <label class="col-form-label">
+            <h5>Progress</h5>
+          </label>
+          <input class="form-control" [(ngModel)]="ww.Progress" value="{{ww.Progress}}" name="Progress" type="text"
+            placeholder="Input progress">
+          <button class="btn btn-link" (click)="removeInput(ww)">删除</button>
+        </div>
+        <button class="btn btn-info" type="button" (click)="addInput(ww_set)">增加</button>
+        <div class="row justify-content-end" style="margin: 15px 0px;">
+          <button type="submit" class="btn btn-primary" (click)="save()">Submit</button>
+        </div>
+        <br><br>
+        <p>{{ ww_set | json }}</p>
+      </div>
+    </div>
+  </ng-template>
+</div>
